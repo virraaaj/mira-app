@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Mira</title>
+  <meta name="theme-color" content="#1a0e1d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mira">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="css/mira.css">
+</head>
+<body>
+  <main class="stage">
+    <svg class="stage__mark" viewBox="-110 -110 220 220" aria-hidden="true"><path data-lissajous="100"/></svg>
+
+    <aside class="presenter">
+      <div class="presenter__brand">
+        <svg viewBox="-12 -12 24 24" aria-hidden="true"><path data-lissajous="10"/></svg>
+        <span class="presenter__word">MIRA</span>
+      </div>
+      <p class="presenter__promise">Irregular, still knowable.</p>
+      <p class="presenter__brief">
+        The companion app for the Mira Ring. Meet <strong>Audrey, 23</strong>, managing PCOS, wearing the ring since June.
+        It is <strong>Monday 9 November</strong>: day 35 of her cycle, three days before she sees her gynaecologist.
+      </p>
+
+      <div class="presenter__label">Moments Mira reaches out</div>
+      <ol class="moments" id="moments">
+        <li><button data-demo="rise"><span class="moments__n">i</span><span><span class="moments__t">Temperature rise</span><span class="moments__s">Range narrows after the fact</span></span><span class="moments__go">→</span></button></li>
+        <li><button data-demo="started"><span class="moments__n">ii</span><span><span class="moments__t">“Did your period start?”</span><span class="moments__s">One tap, only when sensed</span></span><span class="moments__go">→</span></button></li>
+        <li><button data-demo="checkin"><span class="moments__n">iii</span><span><span class="moments__t">Period-day check-in</span><span class="moments__s">Pain and flow, under ten seconds</span></span><span class="moments__go">→</span></button></li>
+        <li><button data-demo="trip"><span class="moments__n">iv</span><span><span class="moments__t">Trip meets range</span><span class="moments__s">Read from her calendar</span></span><span class="moments__go">→</span></button></li>
+        <li><button data-demo="after"><span class="moments__n">v</span><span><span class="moments__t">After the appointment</span><span class="moments__s">What did your doctor say?</span></span><span class="moments__go">→</span></button></li>
+        <li><button data-demo="fatigue"><span class="moments__n">vi</span><span><span class="moments__t">Tired, sleep looks fine</span><span class="moments__s">Fatigue explainer</span></span><span class="moments__go">→</span></button></li>
+      </ol>
+      <div class="presenter__foot">
+        <span>Demo data · not connected to a device</span>
+        <button data-demo="reset">Reset</button>
+      </div>
+    </aside>
+
+    <div class="device-wrap">
+      <div class="device">
+        <div class="screen" id="screen">
+          <div class="island"></div>
+          <div class="statusbar">
+            <span id="clock">9:41</span>
+            <span class="statusbar__r">
+              <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+              <svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 2.2c2.3 0 4.4.9 6 2.4l1.1-1.2C13.2 1.6 10.7.5 8 .5S2.8 1.6.9 3.4L2 4.6c1.6-1.5 3.7-2.4 6-2.4zm0 3.4c1.4 0 2.6.5 3.6 1.4l1.1-1.2C11.4 4.6 9.8 3.9 8 3.9s-3.4.7-4.7 1.9L4.4 7c1-.9 2.2-1.4 3.6-1.4zM8 9c.6 0 1.1.2 1.5.6L8 11.2 6.5 9.6C6.9 9.2 7.4 9 8 9z"/></svg>
+              <svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="22" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-opacity=".4" style="stroke:#f2ebdf"/><rect x="2" y="2" width="16" height="9" rx="2"/><path d="M24 4.5v4c.8-.3 1.4-1.1 1.4-2s-.6-1.7-1.4-2z" fill-opacity=".4"/></svg>
+            </span>
+          </div>
+
+          <div class="view" id="view"></div>
+
+          <nav class="tabbar" id="tabbar"></nav>
+
+          <div class="scrim" id="scrim"></div>
+          <section class="sheet" id="sheet" role="dialog" aria-modal="true"></section>
+          <div class="banner" id="banner" role="status"></div>
+          <div class="toast" id="toast"></div>
+          <div class="homebar"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
